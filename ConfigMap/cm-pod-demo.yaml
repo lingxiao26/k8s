@@ -4,9 +4,11 @@ kind: Pod
 metadata:
   name: cm-pod-demo
 spec:
+  restartPolicy: Never
   containers:
     - name: nginx
       image: nginx
+      imagePullPolicy: Never
       command: ['/bin/sh', '-c', 'env']
       ports:
         - containerPort: 80
